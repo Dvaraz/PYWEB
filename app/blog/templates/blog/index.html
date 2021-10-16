@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<div class="container px-4">
+    <div class="alert alert-success" role="alert">
+        {% for i in notes %}
+            {{ i.id }}
+        {% endfor %}
+        <b>
+        {% if user.is_authenticated %}
+            {{ user.first_name }}
+        {% else %}
+            анонимный пользователь
+        {% endif %}
+        </b> !
+    </div>
+</div>
+</body>
+</html>
