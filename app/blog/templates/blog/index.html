@@ -6,18 +6,11 @@
 </head>
 <body>
 <div class="container px-4">
-    <div class="alert alert-success" role="alert">
-        {% for i in notes %}
-            {{ i.id }}
-        {% endfor %}
-        <b>
-        {% if user.is_authenticated %}
-            {{ user.first_name }}
-        {% else %}
-            анонимный пользователь
-        {% endif %}
-        </b> !
-    </div>
+    <ul>
+        Hello<br>
+        This is blog app {{ x }}
+        <a href="http://127.0.0.1:8000/blog/showgen" target="_blank" rel="noopener noreferrer"> Click here</a>
+    </ul>
 </div>
 </body>
 </html>
