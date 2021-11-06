@@ -7,7 +7,11 @@ from . import views
 app_name = 'blog'
 
 urlpatterns = [
-    path('blog/show/', views.BlogShow.as_view(), name='blog_list'),
-    path('blog/showgen/', views.BlogShowGeneric.as_view(), name='blog_list_gen'),
-    path('blog/about/', views.blog_version, name='version')
+    path('blog/notes/', views.BlogNotesView.as_view(), name='notes'),
+    path('blog/notes/<int:note_id>/', views.BlogNoteDetailView.as_view(), name='note_detail'),
+    path('blog/note/add/', views.BlogNoteEditorView.as_view(), name='note_post'),
+    path('blog/note/<int:note_id>/', views.BlogNoteEditorView.as_view(), name='note_patch'),
+
+    path('blog/comment/<int:note_id>/add/', views.CommentDetailView.as_view(), name='comment_add'),
+    path('blog/comment/<int:comment_id>/delete/', views.CommentDetailView.as_view(), name='comment_del'),
 ]
